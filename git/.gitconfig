@@ -1,0 +1,14 @@
+[user]
+	email = arde987@gmail.com
+	name = zabute
+	
+[github]
+  user = zabute	
+	
+[alias]
+    s = status
+    co = checkout
+    br = branch
+    g = grep
+    ls = ls-files
+    ls-ignored = ls-files --others --i --exclude-standard
