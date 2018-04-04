@@ -1,0 +1,56 @@
+{
+  "window.menuBarVisibility": "toggle",
+  "window.zoomLevel": 0.6,
+
+  "workbench.activityBar.visible": true,
+  "workbench.startupEditor": "none",
+  "workbench.sideBar.location": "left",
+  "workbench.colorTheme": "Material Theme",
+  "editor.renderIndentGuides": false,
+  "editor.renderLineHighlight": "none",
+  "workbench.statusBar.visible": true,
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#21252b",
+    "sideBarSectionHeader.background": "#21252b",
+    "sideBar.background": "#21252b",
+    "statusBar.background": "#21252b",
+    "tab.inactiveBackground": "#21252b",
+    "editorGroupHeader.tabsBackground": "#21252b"
+  },
+
+  "editor.fontSize": 14,
+  "editor.fontFamily":
+    "'Source Code Pro, Droid Sans Mono', 'Courier New', monospace, 'Droid Sans Fallback'",
+  "editor.minimap.renderCharacters": false,
+
+  "javascript.validate.enable": false,
+  "git.confirmSync": false,
+  "emmet.triggerExpansionOnTab": true,
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "vue-html": "html",
+    "plaintext": "jade"
+  },
+
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "javascript.format.enable": false,
+  "html.autoClosingTags": true,
+  "prettier.eslintIntegration": true,
+  "flow.useNPMPackagedFlow": true,
+
+  "stylelint.enable": true,
+  "css.validate": false,
+  "scss.validate": false,
+  "explorer.openEditors.visible": 0,
+  "flow.enabled": true,
+  "typescript.check.npmIsInstalled": false,
+  "vsicons.dontShowNewVersionMessage": true,
+  "workbench.iconTheme": "material-icon-theme",
+  "extensions.ignoreRecommendations": true,
+  "prettier.ignorePath": ".prettierignore",
+  "prettier.singleQuote": true,
+  "prettier.semi": false,
+  "prettier.trailingComma": "none",
+  "prettier.stylelintIntegration": true
+}
