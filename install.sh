@@ -1,7 +1,7 @@
 #!/bin/bash
 
-DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+# setup git
+bash ./git/setup.sh
 
-ln -sf "$DOTFILES_DIR/git/.gitconfig" ~
-ln -sf "$DOTFILES_DIR/git/.gitignore_global" ~
-
+# setup vscode
+bash ./vscode/setup.sh
