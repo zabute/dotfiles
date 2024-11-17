@@ -1,7 +1,7 @@
 import = ["~/.config/alacritty/themes/themes/gruvbox_dark.toml"]
 
 [window]
-padding = { x = 14, y = 10}
+padding = { x = 18, y = 10}
 dynamic_padding = true
 opacity = 0.9
 dimensions = { lines = 24, columns = 80 }
