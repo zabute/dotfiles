@@ -1,0 +1,64 @@
+{
+  "layer": "top",
+  "position": "top",
+  "output": "VGA-1",
+  "modules-left": ["hyprland/workspaces", "sway/workspaces", "hyprland/window"],
+  "modules-center": ["clock"],
+  "modules-right": [
+    "temperature",
+    "cpu",
+    "memory",
+    "pulseaudio",
+    "pulseaudio/slider",
+    "tray",
+    "custom/power",
+  ],
+  "hyprland/workspaces": {},
+
+  "hyprland/window": {
+    "format": "{title}",
+    "max-length": 30,
+    "separate-outputs": true,
+  },
+
+  "custom/power": {
+    "format": "<span>  </span>",
+    "on-click": "wlogout",
+  },
+
+  "clock": {
+    "interval": 60,
+    "format": "{:%a - %b %d - %I:%M %p}",
+    "max-length": 25,
+  },
+
+  "tray": {
+    "icon-size": 18,
+    "spacing": 10,
+  },
+
+  "cpu": {
+    "interval": 10,
+    "format": "{}% <span></span>",
+    "max-length": 10,
+  },
+
+  "memory": {
+    "interval": 30,
+    "format": "{}% <span> </span>",
+    "max-length": 10,
+  },
+
+  "pulseaudio": {
+    "format": " ",
+    "format-muted": "  Muted",
+    "tooltip": false,
+    "scroll-step": 5, // Optional: adjust volume in steps when scrolling
+  },
+
+  "pulseaudio/slider": {
+    "min": 0,
+    "max": 100,
+    "orientation": "horizontal",
+  },
+}

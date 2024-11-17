@@ -1,0 +1,35 @@
+[global]
+monitor = 0
+font = Fira Code Nerd Font
+origin = top-center
+corner_radius = 10
+width = 800
+height = 800
+frame_width = 2
+frame_color = "#b8bb26ee"
+
+[urgency_low]
+    # IMPORTANT: colors have to be defined in quotation marks.
+    # Otherwise the "#" and following would be interpreted as a comment.
+    background = "#28282880"
+    foreground = "#888888"
+    timeout = 10
+    # Icon for notifications with low urgency, uncomment to enable
+    #default_icon = /path/to/icon
+
+[urgency_normal]
+    background = "#32302fee"
+    foreground = "#ffffff"
+    timeout = 10
+    override_pause_level = 30
+    # Icon for notifications with normal urgency, uncomment to enable
+    #default_icon = /path/to/icon
+
+[urgency_critical]
+    background = "#900000"
+    foreground = "#ffffff"
+    frame_color = "#ff0000"
+    timeout = 0
+    override_pause_level = 60
+    # Icon for notifications with critical urgency, uncomment to enable
+    #default_icon = /path/to/icon

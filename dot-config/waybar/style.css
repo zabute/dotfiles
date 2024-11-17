@@ -1,0 +1,147 @@
+@define-color dark-soft rgba(50, 48, 47, 0.5);
+@define-color dark rgba(60, 56, 54, 0.8);
+@define-color faded-yellow rgba(181, 118, 20, 0.4);
+@define-color bright-yellow #fabd2f;
+@define-color text-color #ebdbb2;
+@define-color green rgba(184, 187, 38, 1);
+@define-color green-soft rgba(184, 187, 38, 0.2);
+@define-color red #fb4934;
+
+* {
+  font-family: "FiraCode Nerd Font";
+  font-size: 14px;
+}
+
+window#waybar {
+  background-image: linear-gradient(
+    to bottom,
+    transparent 48%,
+    @bright-yellow 33%,
+    transparent 55%
+  );
+
+  background-color: transparent;
+}
+
+#window {
+  color: @text-color;
+  background-color: @dark-soft;
+  font-weight: bold;
+  padding: 0 12px;
+  margin: 4px 8px 4px 12px;
+  border-radius: 16px;
+}
+
+#workspaces {
+  border-radius: 16px;
+  padding: 0 0px;
+  margin: 2px 0px 2px 2px;
+  background-color: transparent;
+}
+
+#workspaces button {
+  color: @text-color;
+  padding: 0 4px;
+  transition: all 0.2s ease;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 100%;
+  background-color: @dark;
+  margin: 0 4px;
+}
+
+#workspaces button:hover {
+  border: 1px solid transparent;
+}
+
+#workspaces button.active {
+  color: @green;
+  font-weight: bold;
+}
+
+#clock,
+#cpu,
+#memory,
+#temperature,
+#tray,
+#pulseaudio,
+#pulseaudio-slider {
+  padding: 0 12px;
+  margin: 4px 8px 4px 0px;
+  border-radius: 16px;
+  background-color: @dark;
+  font-weight: bold;
+  color: @text-color;
+}
+
+#clock {
+  background-color: @dark-soft;
+}
+
+#custom-power {
+  color: @green;
+  background-color: @dark;
+  padding: 0px 4px 0px 0px;
+  margin: 4px 6px 2px 0px;
+  color: @green;
+  border-radius: 16px;
+  font-weight: bold;
+  /*font-size: 14px;*/
+  transition: all 0.2s ease;
+}
+
+#cpu {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  margin-left: 0px;
+  padding-left: 8px;
+  padding-right: 16px;
+}
+
+#temperature {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  margin-right: 0px;
+  padding-right: 0px;
+}
+
+#memory {
+  padding-right: 8px;
+}
+
+#pulseaudio {
+  padding: 0 12px;
+  margin: 4px -12px 4px 0px;
+  border-top-left-radius: 16px;
+  border-bottom-left-radius: 16px;
+}
+
+#pulseaudio-slider {
+  padding: 0 12px;
+  margin: 4px 8px 4px 0px;
+  border-radius: 0px;
+  border-top-right-radius: 16px;
+  border-bottom-right-radius: 16px;
+}
+
+#pulseaudio-slider slider {
+  min-height: 0px;
+  min-width: 0px;
+  opacity: 0;
+  background-image: none;
+  border: none;
+  box-shadow: none;
+}
+
+#pulseaudio-slider trough {
+  min-height: 10px;
+  min-width: 40px;
+  border-radius: 5px;
+  background-color: black;
+}
+
+#pulseaudio-slider highlight {
+  min-width: 10px;
+  border-radius: 5px;
+  background-color: @text-color;
+}
