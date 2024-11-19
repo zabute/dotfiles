@@ -2,17 +2,17 @@
   "layer": "top",
   "position": "top",
   "output": "VGA-1",
-  //"margin-top": 2,
-  //"margin": 6,
+  "margin-top": 2,
   "modules-left": ["hyprland/workspaces", "sway/workspaces", "hyprland/window"],
-  "modules-center": ["clock"],
+  //"modules-center": ["hyprland/window"],
   "modules-right": [
+    "tray",
     "temperature",
     "cpu",
     "memory",
     "pulseaudio",
     "pulseaudio/slider",
-    "tray",
+    "clock",
     "custom/power",
   ],
   "hyprland/workspaces": {},
@@ -30,7 +30,7 @@
 
   "clock": {
     "interval": 60,
-    "format": "{:%a - %b %d - %I:%M %p}",
+    "format": "{:%a %b %d   %I:%M %p}",
     "max-length": 25,
   },
 

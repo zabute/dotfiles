@@ -1,11 +1,15 @@
-import = ["~/.config/alacritty/themes/themes/gruvbox_dark.toml"]
+import = ["./gruvbox_dark.toml"]
 
 [window]
-padding = { x = 18, y = 10}
+padding = { x = 14, y = 10}
 dynamic_padding = true
 opacity = 0.9
 dimensions = { lines = 24, columns = 80 }
 dynamic_title = true
+decorations = "None"
+
+[cursor]
+style = { shape = "Underline"}
 
 [font]
 normal = { family = "FiraCode Nerd Font Mono", style = "Regular" }
@@ -14,5 +18,4 @@ italic = { family = "FiraCode Nerd Font Mono", style = "Italic" }
 bold_italic = { family = "FiraCode Nerd Font Mono", style = "Bold Italic" }
 size = 14
 
-[colors]
 
