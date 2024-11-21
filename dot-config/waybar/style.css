@@ -1,4 +1,4 @@
-@define-color dark-soft rgba(50, 48, 47, 0.7);
+@define-color dark-soft rgba(50, 48, 47, 0.3);
 @define-color dark rgba(60, 56, 54, 0.9);
 @define-color faded-yellow rgba(181, 118, 20, 0.4);
 @define-color bright-yellow #fabd2f;
@@ -21,7 +21,7 @@
 
 * {
   font-family: "FiraCode Nerd Font";
-  font-size: 14px;
+  /*font-size: 14px;*/
 }
 
 window#waybar {
@@ -33,7 +33,7 @@ window#waybar {
   );
 
   background-color: transparent;
-  /*background-color: @dark;*/
+  background-color: @dark-soft;
 }
 #waybar.empty #window {
   background: none;
@@ -41,7 +41,7 @@ window#waybar {
 
 #window {
   color: @text-color;
-  background-color: @bg;
+  background-color: @dark;
   font-weight: bold;
   padding: 0 12px;
   margin: 4px 8px 4px 12px;
@@ -57,13 +57,13 @@ window#waybar {
 
 #workspaces button {
   color: @text-color;
-  padding: 0 4px;
+  padding: 0px 4px 0px 4px;
   transition: all 0.2s ease;
   font-size: 12px;
   font-weight: bold;
   border-radius: 100%;
-  background-color: @bg0;
-  margin: 0 4px;
+  background-color: @dark;
+  margin: 2px 8px 2px 2px;
 }
 
 #workspaces button:hover {
@@ -72,9 +72,10 @@ window#waybar {
   color: @text-color;
 }
 
-#workspaces button.active {
-  color: @green;
-  background-color: @bg;
+#workspaces button.active,
+#workspaces button.focused {
+  color: @bright-yellow;
+  background-color: @dark;
   font-weight: bold;
 }
 
@@ -84,23 +85,62 @@ window#waybar {
 #temperature,
 #tray,
 #pulseaudio,
-#custom-power,
 #pulseaudio-slider {
   padding: 0 12px;
   margin: 4px 8px 4px 0px;
   border-radius: 16px;
-  background-color: @bg;
+  background-color: @dark;
   font-weight: bold;
   color: @text-color;
 }
 
+#custom-wlsunset,
+#network,
 #custom-power {
-  padding: 0px 11px 0px 6px;
-  margin: 2px 6px 2px 2px;
-  border-radius: 16px;
-  font-weight: bold;
+  background-color: @dark;
+  color: @text-color;
+  margin-top: 4px;
+  margin-bottom: 4px;
   font-size: 16px;
-  transition: all 0.2s ease;
+  font-weight: bold;
+}
+
+#custom-wlsunset:hover,
+#network:hover,
+#custom-power:hover {
+  color: @bright-yellow;
+}
+
+#custom-power {
+  padding-left: 9px;
+  padding-right: 12px;
+  border-top-right-radius: 16px;
+  border-bottom-right-radius: 16px;
+  margin-right: 8px;
+}
+
+#custom-wlsunset {
+  padding-left: 8px;
+  padding-right: 9px;
+  border-top-left-radius: 16px;
+  border-bottom-left-radius: 16px;
+  font-size: 18px;
+}
+
+#network {
+  padding-left: 9px;
+  padding-right: 9px;
+  font-weight: bold;
+}
+
+#network.wifi {
+  padding-top: 2px;
+  font-size: 14px;
+  color: @text-color;
+}
+
+#network.ethernet {
+  font-size: 18px;
 }
 
 #cpu {
@@ -131,6 +171,7 @@ window#waybar {
 
 #pulseaudio-slider {
   padding: 0 12px;
+  padding-right: 8px;
   margin: 4px 8px 4px 0px;
   border-radius: 0px;
   border-top-right-radius: 16px;
@@ -144,14 +185,14 @@ window#waybar {
   background-image: none;
   border: none;
   box-shadow: none;
-  background-color: @green;
+  background-color: @blue;
 }
 
 #pulseaudio-slider trough {
   min-height: 10px;
   min-width: 60px;
   border-radius: 5px;
-  background-color: @dark;
+  background-color: @bg2;
   border: none;
 }
 

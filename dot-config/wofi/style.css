@@ -39,7 +39,7 @@
 }
 
 #window {
-  background-color: @dark-soft;
+  background-color: @bg;
   border: 1px solid #000000;
   border-radius: 0px;
   padding: 0px;
@@ -87,7 +87,8 @@
 }
 
 #outer-box {
-  background-color: @dark-soft;
+  background-color: @bg;
+  border: 2px solid @green;
   border: none;
   margin: 0px;
 }
