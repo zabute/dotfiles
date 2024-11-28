@@ -2,7 +2,7 @@
   "layer": "top",
   "position": "top",
   "output": "VGA-1",
-  //"margin-top": 2,
+  //"margin-top": 4,
   "modules-left": [
     "hyprland/workspaces",
     "sway/workspaces",
