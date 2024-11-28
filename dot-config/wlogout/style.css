@@ -1,3 +1,24 @@
+@define-color dark-soft rgba(50, 48, 47, 0.7);
+@define-color dark rgba(60, 56, 54, 0.9);
+@define-color faded-yellow rgba(181, 118, 20, 0.4);
+@define-color bright-yellow #fabd2f;
+@define-color text-color #ebdbb2;
+@define-color green rgba(184, 187, 38, 1);
+@define-color green-soft rgba(184, 187, 38, 0.65);
+@define-color red #fb4934;
+@define-color blue rgba(69, 133, 136, 1);
+
+@define-color bg #282828;
+@define-color gray #928374;
+@define-color bg0_h #1d2021;
+@define-color bg0_s #32302f;
+@define-color bg0 #282828;
+@define-color bg1 #3c3836;
+@define-color bg2 #504945;
+@define-color bg3 #665c54;
+@define-color bg4 #7c6f64;
+@define-color gray0 #928374;
+
 * {
   background-image: none;
   box-shadow: none;
@@ -5,15 +26,16 @@
 
 window {
   /*background-color: rgba(12, 12, 12, 0.9);*/
-  background-color: transparent;
+  background-color: @dark-soft;
 }
 
 button {
-  border-radius: 0;
-  border-color: black;
+  border-radius: 16px;
+  margin: 8px;
+  border-color: @dark;
   text-decoration-color: #ffffff;
-  color: #ffffff;
-  background-color: #1e1e1e;
+  color: @text-color;
+  background-color: @dark;
   border-style: solid;
   border-width: 1px;
   background-repeat: no-repeat;
@@ -24,7 +46,7 @@ button {
 button:focus,
 button:active,
 button:hover {
-  background-color: #3700b3;
+  background-color: @blue;
   outline-style: none;
 }
 
