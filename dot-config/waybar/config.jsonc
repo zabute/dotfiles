@@ -98,9 +98,10 @@
 
   "custom/wlsunset": {
     "format": "<span>{}</span>",
-    "exec": "~/scripts/wlsunset.sh",
-    "interval": 10, // Check status every 10 seconds
-    "on-click": "~/scripts/wlsunset.sh toggle",
+    "exec": "~/.config/waybar/scripts/wlsunset.sh",
+    "interval": 10,
+    "signal": 10,
+    "on-click": "~/.config/waybar/scripts/wlsunset.sh toggle; pkill -RTMIN+10 waybar",
   },
   "network": {
     //"interface": "wlp0s29u1u8",
