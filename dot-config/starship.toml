@@ -1,0 +1,31 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Inserts a blank line between shell prompts
+add_newline = false
+command_timeout = 3600000
+
+[line_break]
+disabled = true
+
+[git_status]
+# Minimal detailed git status
+ahead = " ⇡${count} "
+behind = " ⇣${count} "
+untracked = " u:${count} "
+modified = " m:${count} " 
+style = "blue"   
+
+[nodejs]
+disabled = true
+
+[golang]
+disabled = true
+
+[character]
+success_symbol = '[➜](bold green)'
+
+[package]
+disabled = true
+
+
