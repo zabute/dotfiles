@@ -16,8 +16,8 @@
     "pulseaudio",
     "pulseaudio/slider",
     "clock",
-    "custom/wlsunset",
     "network",
+    "custom/wlsunset",
     "custom/power",
   ],
 
