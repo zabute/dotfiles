@@ -1,4 +1,4 @@
 #!/bin/bash
 
 # setup vscode
-bash ./vscode/setup.sh
+# bash ./vscode/setup.sh
