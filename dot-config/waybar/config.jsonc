@@ -104,15 +104,13 @@
     "on-click": "~/.config/waybar/scripts/wlsunset.sh toggle; pkill -RTMIN+10 waybar",
   },
   "network": {
-    //"interface": "wlp0s29u1u8",
     "format": "{ifname}",
     "format-wifi": "<span>  {essid}</span>",
-    "format-ethernet": "<span></span>",
-    "format-disconnected": "", //An empty format will hide the module.
+    "format-ethernet": "<span> {ifname}</span>",
+    "format-disconnected": "Disconnected", //An empty format will hide the module.
     "tooltip-format": "{ifname} via {gwaddr} 󰊗",
     "tooltip-format-wifi": "{essid} ({signalStrength}%)",
-    "tooltip-format-ethernet": "{ifname} ",
+    "tooltip-format-ethernet": "{gwaddr}",
     "tooltip-format-disconnected": "Disconnected",
-    //"max-length": 100,
   },
 }
