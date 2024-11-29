@@ -16,5 +16,9 @@ return {
 
   vim.api.nvim_set_keymap('n', '<leader>d', '<cmd>lua vim.diagnostic.open_float()<CR>', { noremap = true, silent = true }),
 
-  vim.api.nvim_set_keymap('n', 'G', 'Gzz', { noremap = true, silent = true }),
+  vim.keymap.set({ 'n', 'v' }, '<leader>c', 'gc', { remap = true }),
+  vim.keymap.set({ 'n' }, '<leader>cc', 'gcc', { remap = true }),
+
+  -- fix yank and paste issue: reselect yank register after paste
+  vim.keymap.set('x', 'p', 'pgvy', { noremap = true, silent = true }),
 }
