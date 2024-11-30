@@ -11,7 +11,7 @@ return {
       harpoon:list():add()
     end)
 
-    vim.keymap.set('n', '<leader>r', function()
+    vim.keymap.set('n', '<leader>j', function()
       harpoon:list():remove()
     end)
 
