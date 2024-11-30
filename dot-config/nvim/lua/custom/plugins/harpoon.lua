@@ -34,9 +34,5 @@ return {
     vim.keymap.set('n', '<leader>d', function()
       harpoon:list():select(3)
     end)
-
-    vim.keymap.set('n', '<leader>f', function()
-      harpoon:list():select(4)
-    end)
   end,
 }
