@@ -3,7 +3,7 @@ program = "/bin/zsh"
 
 
 [window]
-padding = { x = 6, y = 0}
+padding = { x = 8, y = 0}
 dynamic_padding = true
 opacity = 0.6
 dimensions = { lines = 24, columns = 80 }
