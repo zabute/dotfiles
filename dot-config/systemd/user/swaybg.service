@@ -1,0 +1,11 @@
+Description=Set wallpaper with swaybg
+PartOf=graphical-session.target
+After=graphical-session.target
+Requisite=graphical-session.target
+
+[Service]
+ExecStart=/usr/bin/swaybg -m fill -i %h/Pictures/wallhaven-9d1vxk.png
+Restart=on-failure
+
+[Install]
+WantedBy=graphical-session.target
