@@ -1,12 +1,15 @@
 {
   "layer": "top",
   "position": "top",
-  "output": "VGA-1",
+  "output": "DP-1",
+  "margin-top": 2,
   "modules-left": [
     "hyprland/workspaces",
     "sway/workspaces",
+    "niri/workspaces",
     "hyprland/window",
     "sway/window",
+    "niri/window",
   ],
   "modules-right": [
     "tray",
@@ -17,8 +20,6 @@
     "pulseaudio/slider",
     "clock",
     "network",
-    "custom/wlsunset",
-    "custom/power",
   ],
 
   "hyprland/workspaces": {},
@@ -112,5 +113,26 @@
     "tooltip-format-wifi": "{essid} ({signalStrength}%)",
     "tooltip-format-ethernet": "{gwaddr}",
     "tooltip-format-disconnected": "Disconnected",
+  },
+  "niri/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "1": "<b>1</b>",
+      "2": "<b>2</b>",
+      "3": "<b>3</b>",
+      "4": "<b>4</b>",
+      "5": "<b>5</b>",
+      "6": "<b>6</b>",
+      "7": "<b>7</b>",
+      "8": "<b>8</b>",
+      "9": "<b>9</b>",
+
+      "terminal": "",
+      "browser": "",
+      "dev": "<b>\udb81\ude26</b>",
+      // "active": "",
+      // "default": "",
+      "default": "",
+    },
   },
 }

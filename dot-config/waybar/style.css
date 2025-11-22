@@ -33,6 +33,7 @@ window#waybar {
   );
 
   background-color: transparent;
+  background-color: @bg_h;
 }
 
 #waybar.empty #window {
@@ -41,7 +42,7 @@ window#waybar {
 
 #window {
   color: @text-color;
-  background-color: @dark-soft;
+  background-color: @bg0_s;
   font-weight: bold;
   padding: 0 12px;
   margin: 4px 8px 4px 12px;
@@ -62,7 +63,7 @@ window#waybar {
   font-size: 14px;
   font-weight: bold;
   border-radius: 100%;
-  background-color: @dark;
+  background-color: @bg0_s;
   margin: 2px 4px 2px 2px;
 }
 
@@ -86,7 +87,7 @@ window#waybar {
   padding: 0 12px;
   margin: 4px 8px 4px 0px;
   border-radius: 16px;
-  background-color: @dark-soft;
+  background-color: @bg0_s;
   font-weight: bold;
   color: @text-color;
 }

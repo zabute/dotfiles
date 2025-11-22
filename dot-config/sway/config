@@ -2,7 +2,7 @@
 #
 # Read `man 5 sway` for a complete reference.
 
-# gaps inner 2
+# gaps inner 4
 # gaps outer 2
 
 # set $opacity 0.8 
@@ -12,7 +12,7 @@
 
 for_window [class="code-oss"] opacity 0.85
 for_window [class="tilix"] opacity 0.8
-for_window [app_id="kitty"] opacity 0.5
+# for_window [app_id="kitty"] opacity 0.5
 
 exec_always {
     gsettings set $gnome-schema gtk-theme 'Adwaita-dark'
@@ -21,16 +21,16 @@ exec_always {
     gsettings set $gnome-schema font-name 'Your font name'
 }
 
-workspace 1 output VGA-1
-workspace 2 output VGA-1
-workspace 3 output VGA-1
-workspace 4 output VGA-1
-workspace 5 output VGA-1
-workspace 6 output VGA-1
-workspace 7 output VGA-1
-workspace 8 output VGA-1
-workspace 9 output VGA-1
-workspace 10 output DP-1
+# workspace 1 output VGA-1
+# workspace 2 output VGA-1
+# workspace 3 output VGA-1
+# workspace 4 output VGA-1
+# workspace 5 output VGA-1
+# workspace 6 output VGA-1
+# workspace 7 output VGA-1
+# workspace 8 output VGA-1
+# workspace 9 output VGA-1
+# workspace 10 output DP-1
 
 ### Variables
 # Logo key. Use Mod1 for Alt.
@@ -48,29 +48,38 @@ set $term alacritty
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 # set $menu dmenu_path | dmenu | xargs swaymsg exec --
-set $menu wofi --show drun
+set $menu wofi --show run
+
+
+bindsym $mod+i exec ibus engine am:sera
+bindsym $mod+Shift+i exec ibus engine xkb:us
 
 ### Output configuration
-output DP-1 transform 270
-workspace 10 output DP-1
+# output DP-1 transform 270
+# output VGA-1 pos 0 0
+# output DP-1 pos 1920 0
+# workspace 10 output DP-1
+
+mouse_warping none
 
 assign [app_id="firefox"] workspace 3
 assign [class="code-oss"] workspace 4
 assign [class="discord"] workspace 5
-assign [app_id="google-chrome"] workspace 6
-assign [class="obsidian"] workspace 7
+assign [app_id="google-chrome"] workspace 2
+assign [class="GStreamer"] workspace 7
 assign [class="vlc"] workspace 8 
 
-exec_always swaybg -i ~/Pictures/wallhaven-g89pqd.jpg -m fill
+exec_always swaybg -i ~/Pictures/wallhaven-3lyrvy.png -m fill
 
 exec swaync
-exec $term 
+# exec $term 
+exec swaymsg "workspace 1; exec $term"
 exec swaymsg "workspace 4; exec $term -e 'tmux'"
-exec swaymsg "workspace 2; exec $term -e 'ranger'"
+exec swaymsg "workspace 6; exec thunar"
 exec google-chrome-stable --ozone-platform=wayland
 exec swaymsg "workspace 1;"
 
-exec ~/scripts/wlsunset.sh
+# exec ~/scripts/wlsunset.sh
 # Example configuration:
 #
 #   output HDMI-A-1 resolution 1920x1080 position 1920,0
@@ -107,7 +116,39 @@ exec ~/scripts/wlsunset.sh
 # Basics:
 #
     # Start a terminal
-    bindsym $mod+Return exec $term 
+    bindsym $mod+Return exec $term
+    # bindsym $mod+Shift+s exec ffplay -rtsp_transport tcp -i "rtsp://admin:183285a\$@192.168.1.3:554/Streaming/Channels/101" & ffplay -rtsp_transport tcp -i "rtsp://admin:183285a\$@192.168.1.3:554/Streaming/Channels/201" & ffplay -rtsp_transport tcp -i "rtsp://admin:183285a\$@192.168.1.3:554/Streaming/Channels/301"
+
+    # set $rec-cam1 = ffmpeg -i "rtsp://admin:183285a\$@192.168.1.2:554/Streaming/Channels/101" -c copy -f mpegts ~/Videos/rec/cam1.ts
+    # set $rec-cam2 = ffmpeg -i "rtsp://admin:183285a\$@192.168.1.2:554/Streaming/Channels/201" -c copy -f mpegts ~/Videos/rec/cam2.ts
+    # set $rec-cam3 = ffmpeg -i "rtsp://admin:183285a\$@192.168.1.2:554/Streaming/Channels/301" -c copy -f mpegts ~/Videos/rec/cam3.ts
+
+    # set $rec = ffmpeg -i "rtsp://admin:183285a\$@192.168.1.3:554/Streaming/Channels/101" -c copy -f mpegts ~/Videos/rec/cam1.ts & ffmpeg -i "rtsp://admin:183285a\$@192.168.1.3:554/Streaming/Channels/201" -c copy -f mpegts ~/Videos/rec/cam2.ts & ffmpeg -i "rtsp://admin:183285a\$@192.168.1.3:554/Streaming/Channels/301" -c copy -f mpegts ~/Videos/rec/cam3.ts
+
+    # set $liveRec = mpv --no-audio ~/Videos/rec//cam1.ts & mpv --no-audio ~/Videos/rec//cam2.ts & mpv --no-audio ~/Videos/rec//cam3.ts 
+
+    bindsym $mod+Shift+a exec mpv --no-audio --profile=low-latency --untimed --hwdec=auto "rtsp://admin:183285a\$@192.168.1.3:554/Streaming/Channels/101" & mpv --no-audio --profile=low-latency --untimed --hwdec=auto "rtsp://admin:183285a\$@192.168.1.3:554/Streaming/Channels/201" & mpv --no-audio --profile=low-latency --untimed --hwdec=auto "rtsp://admin:183285a\$@192.168.1.3:554/Streaming/Channels/301"
+
+    
+
+    set $live-cam gst-launch-1.0 rtspsrc location="rtsp://admin:183285a\$@192.168.1.2:554/Streaming/Channels/101" protocols="tcp" latency=0 ! queue ! decodebin ! videoconvert ! videoscale! ximagesink sync=false & gst-launch-1.0 rtspsrc location="rtsp://admin:183285a\$@192.168.1.2:554/Streaming/Channels/201" protocols="tcp" latency=0 ! queue ! decodebin ! videoconvert ! videoscale! ximagesink sync=false & gst-launch-1.0 rtspsrc location="rtsp://admin:183285a\$@192.168.1.2:554/Streaming/Channels/301" protocols="tcp" latency=0 ! queue ! decodebin ! videoconvert ! videoscale! ximagesink sync=false
+    
+     bindsym $mod+Shift+g exec $live-cam
+
+     # exec swaymsg "workspace 7; exec $live-cam"
+
+    # bindsym $mod+Shift+o exec ffmpeg -i "rtsp://admin:183285a\$@192.168.1.3:554/Streaming/Channels/101" -c copy -f mpegts ~/Videos/rec/cam1.ts & ffmpeg -i "rtsp://admin:183285a\$@192.168.1.3:554/Streaming/Channels/201" -c copy -f mpegts ~/Videos/rec/cam2.ts & ffmpeg -i "rtsp://admin:183285a\$@192.168.1.3:554/Streaming/Channels/301" -c copy -f mpegts ~/Videos/rec/cam3.ts
+
+    # bindsym $mod+Shift+s exec ffmpeg -i "rtsp://admin:183285a\$@192.168.1.3:554/Streaming/Channels/101" -c:v libx264 -preset veryfast -crf 30 -c:a copy -f mpegts ~/Videos/rec/cam1.ts; exec ffmpeg -i "rtsp://admin:183285a\$@192.168.1.3:554/Streaming/Channels/201" -c:v libx264 -preset veryfast -crf 30 -c:a copy -f mpegts ~/Videos/rec/cam2.ts; exec ffmpeg -i "rtsp://admin:183285a\$@192.168.1.3:554/Streaming/Channels/301" -c:v libx264 -preset veryfast -crf 30 -c:a copy -f mpegts ~/Videos/rec/cam3.ts
+
+
+    bindsym $mod+Shift+s exec ffmpeg -i "rtsp://admin:183285a\$@192.168.1.2:554/Streaming/Channels/101" -c copy -f mpegts ~/Videos/rec/cam1.ts; exec ffmpeg -i "rtsp://admin:183285a\$@192.168.1.2:554/Streaming/Channels/201" -c copy -f mpegts ~/Videos/rec/cam2.ts; exec ffmpeg -i "rtsp://admin:183285a\$@192.168.1.2:554/Streaming/Channels/301" -c copy -f mpegts ~/Videos/rec/cam3.ts
+
+    bindsym $mod+Shift+o exec mpv --no-audio --start=99.9% --keep-open=yes ~/Videos/rec/cam1.ts; exec mpv --no-audio --start=99.9% --keep-open=yes ~/Videos/rec/cam2.ts; exec mpv --no-audio --start=99.9% --keep-open=yes ~/Videos/rec/cam3.ts 
+
+    bindsym $mod+Shift+w exec ~/dotfiles/rec.sh -u admin -p 183285a$ -i 192.168.1.2 -c 101 -o ~/share/rec; exec ~/dotfiles/rec.sh -u admin -p 183285a$ -i 192.168.1.2 -c 201 -o ~/share/rec; exec ~/dotfiles/rec.sh -u admin -p 183285a$ -i 192.168.1.2 -c 301 -o ~/share/rec
+
+    bindsym $mod+Shift+t exec env QT_QPA_PLATFORM=xcb telegram-desktop
 
     # Kill focused window
     bindsym $mod+Shift+q kill

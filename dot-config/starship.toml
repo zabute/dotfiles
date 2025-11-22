@@ -3,14 +3,23 @@
 add_newline = false
 command_timeout = 3600000
 
+format = """
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_status\
+$character
+"""
+
 [line_break]
 disabled = true
 
 [git_status]
 style = "blue"   
 
-[git_metrics]
-disabled = false
+# [git_metrics]
+# disabled = false
 
 [git_branch]
 format = '[$symbol$branch(:$remote_branch)]($style) '
@@ -18,11 +27,17 @@ style = "bold yellow"
 always_show_remote = true
 # symbol = " "
 
-[nodejs]
-disabled = true
+[username]
+show_always = false
+style_user = "bold green"
+style_root = "bold red"
+format = "[${user}](bold yellow)"
 
-[golang]
-disabled = true
+[hostname]
+disabled = false
+ssh_only = true
+style = "bold blue"
+format = "[@${hostname}](bold green) "
 
 [character]
 success_symbol = '[➜](bold green)'
