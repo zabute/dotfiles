@@ -32,5 +32,24 @@ export ANDROID_HOME=$HOME/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
+cam() {
+  setopt local_options nullglob
+
+  files=(~/Videos/rec/*_cam"$1".ts)
+
+  if (( ${#files[@]} == 0 )); then
+    echo "No recordings found for cam$1" >&2
+    return 1
+  fi
+
+  # Run mpv in background but keep display access
+  ~/dotfiles/play-live.sh "${files[@]}" &
+
+  # Detach the job so it doesn't stop when you close the terminal
+  disown
+}
+
+
+
 # Turso
 export PATH="$PATH:/home/zabute/.turso"

@@ -2,9 +2,9 @@
 program = "/bin/zsh"
 
 [window]
-padding = { x = 5, y = 4}
+padding = { x = 12 , y = 12}
 dynamic_padding = true
-opacity = 0.8
+opacity = 0.92
 dimensions = { lines = 24, columns = 80}
 dynamic_title = true
 decorations = "None"

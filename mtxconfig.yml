@@ -1,0 +1,31 @@
+playback: yes
+playbackAddress: :9996
+api: yes
+
+paths:
+  cam1:
+    source: rtsp://admin:183285a$@192.168.1.2:554/Streaming/Channels/101
+    record: yes
+    recordPath: /home/zabute/Videos/rec/%Y-%m-%d_%H-%M-%S-%f_%path
+    recordFormat: mpegts
+    recordPartDuration: 1s
+    recordSegmentDuration: 24h
+    recordDeleteAfter: 72h
+
+  cam2:
+    source: rtsp://admin:183285a$@192.168.1.2:554/Streaming/Channels/201
+    record: yes
+    recordPath: /home/zabute/Videos/rec/%Y-%m-%d_%H-%M-%S-%f_%path
+    recordFormat: mpegts
+    recordPartDuration: 1s
+    recordSegmentDuration: 24h
+    recordDeleteAfter: 72h
+
+  cam3:
+    source: rtsp://admin:183285a$@192.168.1.2:554/Streaming/Channels/301
+    record: yes
+    recordPath: /home/zabute/Videos/rec/%Y-%m-%d_%H-%M-%S0-%f_%path
+    recordPartDuration: 1s
+    recordFormat: mpegts
+    recordSegmentDuration: 24h
+    recordDeleteAfter: 72h
